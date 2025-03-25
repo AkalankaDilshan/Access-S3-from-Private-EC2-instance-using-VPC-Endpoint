@@ -23,7 +23,7 @@ resource "aws_subnet" "private_subnet" {
   vpc_id                  = aws_vpc.main_vpc.id
   cidr_block              = element(var.private_subnet_cidrs, count.index)
   availability_zone       = element(var.private_subnet_cidrs, count.index)
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
   tags = {
     Name = "public subnet ${count.index + 1}"
   }
@@ -53,4 +53,23 @@ resource "aws_route" "public_route" {
 resource "aws_route_table_association" "public_rt_association" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route.public_route.id
+}
+
+// private route table 
+resource "aws_route_table" "private_rt" {
+  vpc_id = aws_vpc.main_vpc.id
+  tags = {
+    Name = "${var.vpc_name}-private-rote-table"
+  }
+}
+
+resource "aws_route" "private_route" {
+  route_table_id         = aws_route_table.private_rt.id
+  destination_cidr_block = var.cidr_block
+  gateway_id             = "local"
+}
+
+resource "aws_route_table_association" "private_rt_association" {
+  subnet_id      = aws_subnet.private_subnet.id
+  route_table_id = aws_route_table.private_rt.id
 }
