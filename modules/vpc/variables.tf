@@ -9,16 +9,16 @@ variable "cidr_block" {
 }
 
 variable "availability_zones" {
-  type        = list(string)
+  type        = string
   description = "availability_zones list"
 }
 
 variable "public_subnet_cidrs" {
-  type        = list(string)
+  type        = string
   description = "cidr values for public subnet"
 }
 
 variable "private_subnet_cidrs" {
-  type        = list(string)
+  type        = string
   description = "cidr values for ptivate subnet"
 }
