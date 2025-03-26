@@ -14,7 +14,6 @@ resource "aws_security_group_rule" "allow_ssh" {
   to_port                  = 22
   protocol                 = "tcp"
   source_security_group_id = var.source_security_group_id
-  cidr_blocks              = ["0.0.0.0/0"]
   security_group_id        = aws_security_group.app_ec2_sg.id
 }
 
