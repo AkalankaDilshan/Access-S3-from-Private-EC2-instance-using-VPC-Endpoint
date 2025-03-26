@@ -22,3 +22,8 @@ variable "private_subnet_cidrs" {
   type        = string
   description = "cidr values for ptivate subnet"
 }
+
+variable "aws_region" {
+  type        = string
+  description = "region in aws"
+}

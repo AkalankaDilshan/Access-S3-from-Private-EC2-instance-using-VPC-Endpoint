@@ -146,3 +146,14 @@ resource "aws_network_acl_rule" "public_allow_all_outbound" {
   egress         = true
   cidr_block     = "0.0.0.0/0"
 }
+
+
+//Attach VPC Endpoint gateway 
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id            = aws_vpc.main_vpc.id
+  service_name      = "com.amazonaws.${var.aws_region}.s3"
+  vpc_endpoint_type = "Gateway"
+  tags = {
+    Name = "s3-gateway-endpoint"
+  }
+}
