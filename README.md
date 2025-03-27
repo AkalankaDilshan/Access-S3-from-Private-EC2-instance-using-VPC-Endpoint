@@ -4,7 +4,8 @@ This project demonstrates how to access an Amazon S3 bucket from a private EC2 i
 
 ## Architecture Diagram
 
-![Architecture Diagram](./image_59_49.png)
+![image_59_49](https://github.com/user-attachments/assets/451595b7-5bfb-4161-ab14-8178fd56531f)
+
 
 ## Tech Stack
 - **AWS**: EC2, S3, VPC, VPC Endpoint, IAM
