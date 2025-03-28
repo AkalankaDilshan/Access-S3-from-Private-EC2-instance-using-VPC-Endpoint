@@ -38,7 +38,7 @@ module "web_instace_bastion" {
   ebs_volume_type    = "gp2"
   ebs_volume_size    = 8
   key_pair_name      = "moba-key" # enter you key name  
-  depends_on         = [module.secuiry_group_application]
+  depends_on         = [module.secuiry_group_bastion]
 }
 
 # module "web_instace_application" {
