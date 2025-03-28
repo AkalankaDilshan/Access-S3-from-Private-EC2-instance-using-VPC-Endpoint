@@ -37,7 +37,7 @@ module "web_instace_bastion" {
   allow_public_ip    = true
   ebs_volume_type    = "gp2"
   ebs_volume_size    = 8
-  key_pair_name      = "moba-key"
+  key_pair_name      = "moba-key" # enter you key name  
   depends_on         = [module.secuiry_group_application]
 }
 
@@ -50,6 +50,6 @@ module "web_instace_application" {
   allow_public_ip    = true
   ebs_volume_type    = "gp2"
   ebs_volume_size    = 8
-  key_pair_name      = "moba-key"
+  key_pair_name      = "moba-key" # enter you key name  
   depends_on         = [module.secuiry_group_application]
 }
