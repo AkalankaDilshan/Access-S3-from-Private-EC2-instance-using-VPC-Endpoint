@@ -4,8 +4,9 @@ This project demonstrates how to access an Amazon S3 bucket from a private EC2 i
 
 ## Architecture Diagram
 
+![architecture](https://github.com/user-attachments/assets/f2475241-d132-4d04-af8a-fc8eb58967fb)
 
-![ChatGPT Image Apr 1, 2025, 02_42_27 PM](https://github.com/user-attachments/assets/8f2efba3-7d5e-4cfa-9c6d-3c3e7c712433)
+
 
 
 ## Tech Stack
